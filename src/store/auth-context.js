@@ -10,10 +10,14 @@ const AuthContext=React.createContext({
 export const AuthContextProvider=(props)=>{
 
 const initialToken=localStorage.getItem('token');
+
+
 setTimeout(()=>{
   localStorage.clear();
-},7000)
+},1000*60*5)
 console.log('settime out active')
+
+
 const [token,setToken]=useState(initialToken);
 
 const userIsLoggedIn =!!token;
